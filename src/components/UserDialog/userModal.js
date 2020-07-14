@@ -24,7 +24,8 @@ export class UserModal extends React.Component {
                 userError: false,
                 passError: false,
                 firstError: false,
-                lastError: false
+                lastError: false,
+                backError:false
             },
             errorTexts: {
                 userText: '',
@@ -257,7 +258,8 @@ export class UserModal extends React.Component {
                     is_active: response.data.is_active,
                 });
             })
-            .catch((err) => alert(`Ошибка ${err}`))
+            .catch((err) => alert(`${err}
+Пользователь не получен, попробуйте позже`))
     }
 
     saveUser() {
@@ -313,7 +315,8 @@ export class UserModal extends React.Component {
                     updateUser({ user: response.data, id});
             })
             .catch( (err) =>
-            alert(`Ошибка ${err}`));
+            alert(`${err}
+            Пользователь не добавлен`));
         onClose();
     }
 
