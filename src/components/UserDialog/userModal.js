@@ -257,7 +257,7 @@ export class UserModal extends React.Component {
                     is_active: response.data.is_active,
                 });
             })
-            .catch((err) => console.log(err) )
+            .catch((err) => alert(`Ошибка ${err}`))
     }
 
     saveUser() {
@@ -312,7 +312,8 @@ export class UserModal extends React.Component {
                 else
                     updateUser({ user: response.data, id});
             })
-            .catch( (err) => console.log(err));
+            .catch( (err) =>
+            alert(`Ошибка ${err}`));
         onClose();
     }
 
